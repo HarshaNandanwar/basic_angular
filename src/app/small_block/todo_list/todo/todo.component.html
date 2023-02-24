@@ -1,0 +1,16 @@
+<div>
+    <div style="height: 60px;">
+    </div>
+    <div class="main-box">
+        <input type="text" id="item" name="item" [(ngModel)]="item" />
+        <button type="button" (click)="addTodo()">add</button>
+        <br>
+        <br>
+        <ul>
+            <li *ngFor="let item of todo; let i = index">
+                {{ i + 1 }} - {{ item }}
+                <button type="button" (click)="del(i)">delete</button>
+            </li>
+        </ul>
+    </div>
+</div>

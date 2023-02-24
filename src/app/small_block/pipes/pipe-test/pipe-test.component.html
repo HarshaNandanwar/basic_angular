@@ -1,0 +1,54 @@
+<div>
+    <div style="height: 60px;">
+    </div>
+    <div class="main-box">
+      <input type="text" #myValue>
+      <button (click)="fireEvent(myValue.value)">transfer</button>
+      <table>
+        <tr>
+            <th>uppercase</th>
+            <th>lowercase</th>
+            <th>titlecase</th>
+            <th>slice</th>
+            <th>json</th>
+            <th>more than one pipe</th>
+        </tr>
+        <tr>
+            <td>{{data |uppercase}}</td>
+            <td>{{data |lowercase}}</td>
+            <td>{{data |titlecase}}</td>
+            <td>{{data |slice:3:5}}</td>
+            <td>{{person |json}}</td>
+            <td>{{data | slice:3:5 |uppercase}}</td>
+        </tr>
+      </table>
+      <br>
+      <br>
+      <p><b>number pipe</b></p>
+      <small>{{5.678 | number:'1.2-3'}}</small><br>
+      <small>{{5.678 | number:'3.1-2'}}</small><br>
+      <small>{{5.678 | number:'6.5-6'}}</small>
+
+
+      <p><b>percent</b></p>
+      <small>{{.15 | percent}}</small>
+
+
+      <p><b>currency</b></p>
+      <small>{{.15 | currency:"&#8377;"}}</small><br>
+      <small>{{.15 | currency:"INR"}}</small>
+
+
+      <p><b>date</b></p>
+      <small>{{date}}</small><br>
+      <small>{{date | date:'short'}}</small><br>
+      <small>{{date | date:'shortDate'}}</small><br>
+      <small>{{date | date:'shortTime'}}</small><br>
+      <small>{{date | date:'fullDate'}}</small>
+
+      
+      <p><b>custom pipe</b></p>
+      <small>{{ 1 | dollerRupee:2}}</small>
+
+    </div>
+    </div>

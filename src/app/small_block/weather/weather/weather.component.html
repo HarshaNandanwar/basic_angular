@@ -1,0 +1,18 @@
+<div>
+    <div style="height: 60px;">
+    </div>
+    <div class="main-box">
+        <label>Enter Location</label>
+        <br>
+        <input type="text" #myLocation>
+        <button (click)="getLocation(myLocation.value)">click</button>
+        <div *ngIf="show">
+            <div>{{WeatherData.temp_celcius}}°</div>
+            <div>{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+            <div>Feels Like: {{WeatherData.temp_feels_like}}°</div>
+            <div>{{WeatherData.name}}</div>
+            <div>Humidity: {{WeatherData.main.humidity}}%</div>
+        </div>
+
+    </div>
+</div>

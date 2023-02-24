@@ -1,0 +1,11 @@
+<div>
+    <div style="height: 60px;">
+    </div>
+    <div class="main-box">
+        <input type="text" #myvalue/>
+        <button (click)="passData(myvalue.value)">click for pass data parent to child</button>
+        
+        <app-childc (childEvent)="message=$event" [parentData]="name"></app-childc>
+        <p>Hello I am <b>{{message}}</b> from child component </p>
+    </div>
+</div>

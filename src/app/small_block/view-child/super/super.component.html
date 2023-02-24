@@ -1,0 +1,20 @@
+<div>
+    <div class="main-box row  my-5">
+        <div class="col-6 small-box1">
+            <h4>Parent Component</h4>
+            <small>@ViewChild used for accessing child component</small>
+            <br>
+            <br>
+            <div>
+                <input type="text" #myData placeholder="enter name">&nbsp;
+                <button type="button" (click)="changeChildProperty(myData.value)">click for change child data</button>
+                <br>
+                <br>
+                <button type="button" (click)="changeChildMethod()">click for change child method</button>
+            </div>
+        </div>
+        <div class="col-6 small-box2">
+            <app-sub></app-sub>
+        </div>
+    </div>
+</div>

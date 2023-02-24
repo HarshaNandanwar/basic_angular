@@ -1,0 +1,46 @@
+<div>
+    <div style="height: 60px;">
+    </div>
+    <div class="main-box">
+        <form [formGroup]="userDetail" (ngSubmit)="userData()">
+            <div>
+                <label>UserName : </label>&nbsp;
+                <input type="text" placeholder="Enter Name" name="user" formControlName="user">
+                <small *ngIf="user && user.invalid && user.touched">please enter user</small>
+            </div>
+            <div>
+                <label>DOB : </label>&nbsp;
+                <input type="date" placeholder="Enter DOB" name="dob" formControlName="dob">
+            </div>
+            <div>
+                <label>Contact : </label>&nbsp;
+                <input type="text" placeholder="Enter Contact" name="contact" formControlName="contact">
+                <small *ngIf="contact && contact.invalid && contact.touched">contact length should be 10</small>
+            </div>
+            <div>
+                <label>Password : </label>&nbsp;
+                <input type="password" placeholder="Enter Password" name="password" formControlName="password">
+                <small *ngIf="password && password.invalid && password.touched">password should be minimum 8
+                    length</small>
+            </div>
+            <div>
+                <label>City : </label>&nbsp;
+                <input type="text" placeholder="Enter city" name="city" formControlName="city">
+            </div>
+            <div>
+                <div formArrayName="skills">
+                    <button type="button" (click)="addSkills()">Add Skill</button>
+                    <div *ngFor="let hobby of skillControls; let i = index">
+                        <input type="text" [formControlName]="i" name="skill" />
+                        <button type="button" (click)="deleteSkill(i)">del</button>
+                    </div>
+                    <small>{{msg}}</small>
+                </div>
+            </div>
+
+            <div>
+                <button [disabled]="userDetail.invalid" type="submit">submit</button>
+            </div>
+        </form>
+    </div>
+</div>
